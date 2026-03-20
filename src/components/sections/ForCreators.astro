@@ -1,0 +1,52 @@
+---
+// For Creators — Section 3
+// Copy and design spec will be delivered by Ember and Designer
+---
+
+<section
+  id="for-creators"
+  class="py-[var(--spacing-section-lg)]"
+  aria-label="For Creators"
+>
+  <div class="section-container">
+    <div class="divider mb-[var(--spacing-section-md)]"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Copy -->
+      <div class="animate-on-scroll">
+        <p class="text-label-md uppercase tracking-widest text-gaze-ember mb-4">
+          For Creators
+        </p>
+        <h2 class="text-display-md font-medium text-gaze-fg-primary mb-6">
+          Own your economics.
+        </h2>
+        <p class="text-body-xl text-gaze-fg-secondary mb-8">
+          Launch a personal token with bonding curve pricing.
+          Your community buys in. You set the split.
+          The protocol handles the rest.
+        </p>
+        <ul class="space-y-4">
+          {[
+            'Permissionless launch — no application, no approval',
+            'Bonding curve pricing — transparent, on-chain',
+            'Configurable creator/staker rewards split',
+            'Monthly leaderboard based on your audience\'s watch time',
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-body-md text-gaze-fg-secondary">
+              <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gaze-ember flex-shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Visual placeholder — Designer will spec -->
+      <div
+        class="aspect-square rounded-[var(--radius-card)] bg-gaze-bg-surface border border-gaze-border animate-on-scroll flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <p class="text-body-sm text-gaze-fg-subtle">Visual — Designer spec pending</p>
+      </div>
+    </div>
+  </div>
+</section>
