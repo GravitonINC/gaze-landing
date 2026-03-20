@@ -1,0 +1,31 @@
+---
+// Navigation — minimal, restrained
+---
+
+<nav class="fixed top-0 left-0 right-0 z-[var(--z-overlay)] py-5">
+  <div class="section-container flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group" aria-label="Gaze Protocol">
+      <span class="text-body-md font-medium tracking-tight text-gaze-fg-primary">
+        Gaze
+      </span>
+    </a>
+
+    <!-- CTA -->
+    <a
+      href="https://app.gazeprotocol.com"
+      class="
+        inline-flex items-center gap-2
+        px-4 py-2
+        text-label-md font-medium uppercase tracking-widest
+        text-gaze-fg-primary
+        border border-gaze-border
+        rounded-pill
+        transition-all duration-[var(--duration-base)] ease-[var(--ease-gaze)]
+        hover:border-gaze-ember hover:text-gaze-ember
+      "
+    >
+      Launch App
+    </a>
+  </div>
+</nav>
