@@ -1,0 +1,38 @@
+---
+// How It Works — Section 2
+// Copy and design spec will be delivered by Ember and Designer
+---
+
+<section
+  id="how-it-works"
+  class="py-[var(--spacing-section-lg)]"
+  aria-label="How It Works"
+>
+  <div class="section-container">
+    <div class="divider mb-[var(--spacing-section-md)]"></div>
+
+    <div class="max-w-narrow mb-16 animate-on-scroll">
+      <p class="text-label-md uppercase tracking-widest text-gaze-ember mb-4">
+        How It Works
+      </p>
+      <h2 class="text-display-md font-medium text-gaze-fg-primary">
+        Three ways to participate.
+      </h2>
+    </div>
+
+    <!-- Steps grid — copy from Ember -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { step: '01', label: 'Watch', description: 'Install the Chrome extension. Watch what you already watch. Earn every second.' },
+        { step: '02', label: 'Stake', description: 'Buy a creator\'s token on their bonding curve. Stake it to earn options that accrue continuously.' },
+        { step: '03', label: 'Create', description: 'Launch your personal token. Set your rewards split. Build a community that values your time.' },
+      ].map(({ step, label, description }) => (
+        <div class="animate-on-scroll">
+          <p class="text-label-sm uppercase tracking-widest text-gaze-fg-subtle mb-4">{step}</p>
+          <h3 class="text-display-md font-medium text-gaze-fg-primary mb-4">{label}</h3>
+          <p class="text-body-lg text-gaze-fg-secondary">{description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
