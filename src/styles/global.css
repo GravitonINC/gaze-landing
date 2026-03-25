@@ -29,6 +29,13 @@
     scroll-behavior: smooth;
   }
 
+  /* Respect reduced-motion preference for scroll-behavior */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     margin: 0;
     min-height: 100dvh;
@@ -124,5 +131,19 @@
   .animate-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Respect reduced-motion preference — disable scroll animations */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
