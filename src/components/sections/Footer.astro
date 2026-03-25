@@ -1,0 +1,88 @@
+---
+// Footer — minimal, restrained
+---
+
+const links = [
+  {
+    label: 'Product',
+    items: [
+      { text: 'Launch App',       href: 'https://app.gazeprotocol.com' },
+      { text: 'Chrome Extension', href: 'https://chromewebstore.google.com' },
+      { text: 'How It Works',     href: '#how-it-works' },
+    ],
+  },
+  {
+    label: 'Community',
+    items: [
+      { text: 'X / Twitter', href: 'https://x.com/gazeprotocol' },
+      { text: 'Telegram',    href: 'https://t.me/gazeprotocol' },
+    ],
+  },
+  {
+    label: 'Developers',
+    items: [
+      { text: 'Documentation', href: 'https://docs.gazeprotocol.com' },
+    ],
+  },
+] as const;
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="py-[var(--spacing-section-md)] border-t border-gaze-border"
+  aria-label="Site footer"
+>
+  <div class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href="/" class="inline-block mb-4" aria-label="Gaze Protocol">
+          <span class="text-body-md font-medium tracking-tight text-gaze-fg-primary">
+            Gaze
+          </span>
+        </a>
+        <p class="text-body-sm text-gaze-fg-muted max-w-[20ch]">
+          Your attention is already valuable.
+        </p>
+      </div>
+
+      <!-- Link columns -->
+      {links.map(({ label, items }) => (
+        <div>
+          <p class="text-label-sm uppercase tracking-widest text-gaze-fg-subtle mb-4">
+            {label}
+          </p>
+          <ul class="space-y-3">
+            {items.map(({ text, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="
+                    text-body-sm text-gaze-fg-secondary
+                    transition-colors duration-[var(--duration-fast)]
+                    hover:text-gaze-fg-primary
+                  "
+                  {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="divider mb-8"></div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-body-sm text-gaze-fg-subtle">
+        &copy; {year} Graviton Inc. All rights reserved.
+      </p>
+      <p class="text-body-sm text-gaze-fg-subtle">
+        Built on Solana.
+      </p>
+    </div>
+  </div>
+</footer>
