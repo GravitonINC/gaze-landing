@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "lint": "eslint . --ext .ts,.astro",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "astro check"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
