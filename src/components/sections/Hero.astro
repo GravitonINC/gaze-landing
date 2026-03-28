@@ -1,0 +1,68 @@
+---
+// Hero — Section 1
+// Copy and design spec will be delivered by Ember and Designer
+---
+
+<section
+  id="hero"
+  class="relative min-h-dvh flex items-center pt-20"
+  aria-label="Hero"
+>
+  <div class="section-container">
+    <!-- Placeholder: copy from Ember, design from Designer -->
+    <div class="max-w-prose">
+      <p class="text-label-md uppercase tracking-widest text-gaze-ember mb-6 animate-on-scroll">
+        Attention Protocol on Solana
+      </p>
+      <h1 class="text-display-xl font-medium text-gaze-fg-primary mb-8 animate-on-scroll" style="animation-delay: 100ms">
+        Your attention is already valuable.
+      </h1>
+      <p class="text-body-xl text-gaze-fg-secondary mb-12 animate-on-scroll" style="animation-delay: 200ms">
+        Watch creators you love. Earn from the attention you already give.
+      </p>
+      <div class="flex flex-wrap gap-4 animate-on-scroll" style="animation-delay: 300ms">
+        <a
+          href="#"
+          class="
+            inline-flex items-center gap-2
+            px-6 py-3
+            text-body-md font-medium
+            bg-gaze-ember text-white
+            rounded-pill
+            transition-all duration-[var(--duration-base)] ease-[var(--ease-gaze)]
+            hover:bg-gaze-ember-dim
+          "
+        >
+          {/* TODO: Update href to real Chrome Web Store URL when extension is published */}
+          Install Extension
+        </a>
+        <a
+          href="#how-it-works"
+          class="
+            inline-flex items-center gap-2
+            px-6 py-3
+            text-body-md font-medium
+            text-gaze-fg-secondary
+            border border-gaze-border
+            rounded-pill
+            transition-all duration-[var(--duration-base)] ease-[var(--ease-gaze)]
+            hover:border-gaze-ember hover:text-gaze-fg-primary
+          "
+        >
+          How it works
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ambient ember glow -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+  >
+    <div
+      class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 animate-ember-pulse"
+      style="background: radial-gradient(circle, var(--color-ember) 0%, transparent 70%)"
+    ></div>
+  </div>
+</section>

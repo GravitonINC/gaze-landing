@@ -1,0 +1,61 @@
+/**
+ * Gaze Protocol Design Tokens
+ * Source of truth: gaze-agents/prompts/design-system.md
+ * Aesthetic: Ember Gallery — candlelit, premium, intimate, restrained
+ */
+
+:root {
+  /* ─── Color: Backgrounds ─────────────────────────────────────────── */
+  --color-bg-base:     #0a0a0b;   /* Near-black canvas */
+  --color-bg-surface:  #111113;   /* Card / panel surface */
+  --color-bg-elevated: #18181c;   /* Elevated surface (modals, dropdowns) */
+  --color-bg-overlay:  #1e1e24;   /* Overlay / hover state */
+
+  /* ─── Color: Foregrounds ─────────────────────────────────────────── */
+  --color-fg-primary:   #f5f4f0;  /* Primary text — warm white */
+  --color-fg-secondary: #c8c5bc;  /* Secondary text */
+  --color-fg-muted:     #8a8680;  /* Muted / supporting text */
+  --color-fg-subtle:    #4a4845;  /* Subtle / disabled text */
+
+  /* ─── Color: Brand (Ember) ───────────────────────────────────────── */
+  --color-ember:      #e8622a;    /* Primary ember orange */
+  --color-ember-dim:  #a84420;    /* Dimmed ember (hover states) */
+  --color-ember-glow: rgba(232, 98, 42, 0.15); /* Glow / ambient */
+
+  /* ─── Color: Borders ─────────────────────────────────────────────── */
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+
+  /* ─── Spacing: Sections ──────────────────────────────────────────── */
+  --spacing-section-sm: clamp(3rem, 6vw, 5rem);
+  --spacing-section-md: clamp(5rem, 10vw, 8rem);
+  --spacing-section-lg: clamp(7rem, 14vw, 12rem);
+  --spacing-section-xl: clamp(10rem, 18vw, 16rem);
+
+  /* ─── Border Radius ──────────────────────────────────────────────── */
+  --radius-card: 12px;
+  --radius-pill: 9999px;
+
+  /* ─── Shadows ────────────────────────────────────────────────────── */
+  --shadow-ember:      0 0 40px rgba(232, 98, 42, 0.2), 0 0 80px rgba(232, 98, 42, 0.08);
+  --shadow-card:       0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 2px 8px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* ─── Typography ─────────────────────────────────────────────────── */
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'Fira Code', monospace;
+
+  /* ─── Transitions ────────────────────────────────────────────────── */
+  --ease-gaze:    cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:   150ms;
+  --duration-base:   250ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+
+  /* ─── Z-index scale ──────────────────────────────────────────────── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-toast:   300;
+}
