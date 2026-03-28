@@ -1,0 +1,52 @@
+---
+// Platforms — Section 5
+const platforms = [
+  'YouTube',
+  'Twitch',
+  'Kick',
+  'Rumble',
+  'X',
+  'Parti',
+  'Arena',
+  'Abstract',
+  'Pump.fun',
+] as const;
+---
+
+<section
+  id="platforms"
+  class="py-[var(--spacing-section-md)]"
+  aria-label="Supported Platforms"
+>
+  <div class="section-container">
+    <div class="divider mb-[var(--spacing-section-md)]"></div>
+
+    <div class="text-center mb-12 animate-on-scroll">
+      <p class="text-label-md uppercase tracking-widest text-gaze-fg-muted mb-4">
+        Supported Platforms
+      </p>
+      <h2 class="text-display-md font-medium text-gaze-fg-primary">
+        Nine platforms. One extension.
+      </h2>
+    </div>
+
+    <!-- Platform list — icons from Designer -->
+    <div class="flex flex-wrap justify-center gap-6 animate-on-scroll">
+      {platforms.map((platform) => (
+        <div
+          class="
+            px-5 py-3
+            rounded-[var(--radius-card)]
+            bg-gaze-bg-surface
+            border border-gaze-border
+            text-body-md text-gaze-fg-secondary
+            transition-all duration-[var(--duration-base)] ease-[var(--ease-gaze)]
+            hover:border-gaze-ember hover:text-gaze-fg-primary
+          "
+        >
+          {platform}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

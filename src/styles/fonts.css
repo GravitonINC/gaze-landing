@@ -1,0 +1,37 @@
+/**
+ * Geist Font — Self-hosted
+ * Source: https://vercel.com/font
+ * Files live in /public/fonts/geist/
+ *
+ * Variable font ranges:
+ *   Geist:      weight 100–900
+ *   Geist Mono: weight 100–900
+ */
+
+/* ─── Geist (Variable) ───────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/GeistVariableVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Geist Mono (Variable) ──────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/geist/GeistMonoVariableVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * NOTE: Font files must be placed in /public/fonts/geist/
+ * Download from: https://github.com/vercel/geist-font/releases
+ * Required files:
+ *   - GeistVariableVF.woff2
+ *   - GeistMonoVariableVF.woff2
+ */

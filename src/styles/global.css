@@ -1,0 +1,149 @@
+/**
+ * Gaze Protocol — Global Styles
+ * Imports design tokens and sets up base typography.
+ */
+
+@import './tokens.css';
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Reset & Defaults ──────────────────────────────────────── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-base);
+    color: var(--color-fg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  /* Respect reduced-motion preference for scroll-behavior */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-ember-glow);
+    color: var(--color-fg-primary);
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--color-fg-primary);
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Images */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Code */
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────── */
+
+@layer utilities {
+  /* Ember glow effect */
+  .ember-glow {
+    box-shadow: var(--shadow-ember);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-fg-primary) 0%, var(--color-fg-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-ember {
+    background: linear-gradient(135deg, var(--color-ember) 0%, #f5a623 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section container */
+  .section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  /* Divider */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* Animate on scroll (initial state) */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--duration-slower) var(--ease-gaze),
+      transform var(--duration-slower) var(--ease-gaze);
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Respect reduced-motion preference — disable scroll animations */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
