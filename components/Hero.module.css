@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--gaze-obsidian-deep);
+  padding: var(--space-32) 0 var(--space-20);
+}
+
+/* Ambient amber glow behind the eye */
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 191, 0, 0.06) 0%,
+    rgba(255, 191, 0, 0.02) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+}
+
+/* Burning Eye */
+.eyeWrapper {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-4);
+}
+
+.burningEye {
+  width: 100%;
+  height: 100%;
+}
+
+/* Iris pulse animation */
+.iris {
+  animation: irisPulse 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes irisPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+/* Outer glow rings */
+.glowRingOuter {
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.glowRingMid {
+  animation: ringPulse 6s ease-in-out infinite 1s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Rays slow rotation */
+.rays {
+  animation: raysRotate 20s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+@keyframes raysRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gaze-amber);
+  opacity: 0.8;
+}
+
+/* Headline */
+.headline {
+  max-width: 800px;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--gaze-white);
+}
+
+.headlineAccent {
+  color: var(--gaze-amber);
+  position: relative;
+}
+
+/* Subheadline */
+.subheadline {
+  max-width: 520px;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.65;
+  color: var(--gaze-white-dim);
+  font-weight: 400;
+}
+
+/* CTA group */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.ctaPrimary {
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.ctaSecondary {
+  font-size: 16px;
+  padding: 16px 28px;
+}
+
+/* Platform note */
+.platformNote {
+  font-size: 13px;
+  color: var(--gaze-white-muted);
+  letter-spacing: 0.01em;
+  margin-top: var(--space-2);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 64px;
+  }
+
+  .eyeWrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .headline {
+    font-size: 36px;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .iris,
+  .glowRingOuter,
+  .glowRingMid,
+  .rays {
+    animation: none;
+  }
+}

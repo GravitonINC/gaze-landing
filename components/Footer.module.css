@@ -1,0 +1,119 @@
+.footer {
+  background: #0a0a0a;
+  border-top: 1px solid var(--gaze-obsidian-border);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-8);
+}
+
+/* ── Top row ────────────────────────────────────────────────── */
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gaze-amber);
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gaze-white-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--gaze-amber);
+}
+
+/* Social icons */
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gaze-white-muted);
+  transition: color var(--transition-fast);
+}
+
+.socialLink:hover {
+  color: var(--gaze-amber);
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gaze-obsidian-border);
+}
+
+/* ── Bottom row ─────────────────────────────────────────────── */
+.bottomRow {
+  padding-top: var(--space-6);
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--gaze-white-muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+
+  .nav {
+    justify-content: flex-start;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 375px) {
+  .nav {
+    gap: var(--space-4);
+  }
+}

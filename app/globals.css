@@ -1,0 +1,283 @@
+/* ============================================================
+   GAZE PROTOCOL — OBSIDIAN AMBER DESIGN SYSTEM
+   Creative Direction: The Observational Monolith
+   Candlelit gallery aesthetic — warm restraint
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Core palette */
+  --gaze-obsidian: #131313;
+  --gaze-obsidian-deep: #0a0a0a;
+  --gaze-obsidian-surface: #1a1a1a;
+  --gaze-obsidian-elevated: #222222;
+  --gaze-obsidian-border: #2a2a2a;
+
+  --gaze-amber: #FFBF00;
+  --gaze-amber-dim: #CC9900;
+  --gaze-amber-glow: rgba(255, 191, 0, 0.15);
+  --gaze-amber-glow-strong: rgba(255, 191, 0, 0.25);
+
+  --gaze-white: #F5F0E8;
+  --gaze-white-dim: rgba(245, 240, 232, 0.7);
+  --gaze-white-muted: rgba(245, 240, 232, 0.4);
+  --gaze-white-faint: rgba(245, 240, 232, 0.15);
+
+  /* Typography */
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Layout */
+  --max-width: 1280px;
+  --section-padding-x: clamp(24px, 5vw, 80px);
+  --section-padding-y: clamp(64px, 8vw, 120px);
+
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-amber: 0 0 40px rgba(255, 191, 0, 0.12);
+  --shadow-amber-strong: 0 0 60px rgba(255, 191, 0, 0.2);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ── Reset & Base ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--gaze-obsidian);
+  color: var(--gaze-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--gaze-white);
+}
+
+h1 { font-size: clamp(40px, 6vw, 80px); }
+h2 { font-size: clamp(28px, 4vw, 52px); }
+h3 { font-size: clamp(20px, 2.5vw, 32px); }
+h4 { font-size: clamp(16px, 2vw, 22px); }
+
+p {
+  color: var(--gaze-white-dim);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--gaze-amber);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gaze-white);
+}
+
+/* ── Layout Utilities ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.section {
+  padding: var(--section-padding-y) 0;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gaze-amber);
+  color: var(--gaze-obsidian);
+}
+
+.btn-primary:hover {
+  background: #FFD040;
+  color: var(--gaze-obsidian);
+  box-shadow: var(--shadow-amber-strong);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gaze-white);
+  border: 1px solid var(--gaze-obsidian-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gaze-amber);
+  color: var(--gaze-amber);
+  background: var(--gaze-amber-glow);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--gaze-white-dim);
+  padding: 10px 20px;
+}
+
+.btn-ghost:hover {
+  color: var(--gaze-white);
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: var(--gaze-obsidian-surface);
+  border: 1px solid var(--gaze-obsidian-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: rgba(255, 191, 0, 0.3);
+  box-shadow: var(--shadow-amber);
+}
+
+/* ── Dividers ──────────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gaze-obsidian-border);
+}
+
+/* ── Amber accent line ─────────────────────────────────────── */
+.accent-line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: var(--gaze-amber);
+  border-radius: var(--radius-pill);
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gaze-obsidian-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gaze-obsidian-border);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gaze-amber-dim);
+}
+
+/* ── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: var(--gaze-amber-glow-strong);
+  color: var(--gaze-white);
+}
+
+/* ── Focus visible ─────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gaze-amber);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Responsive breakpoints ────────────────────────────────── */
+/* 1440px — large desktop (default) */
+/* 1024px — laptop */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding-x: clamp(20px, 4vw, 48px);
+  }
+}
+
+/* 768px — tablet */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-x: 20px;
+    --section-padding-y: clamp(48px, 8vw, 80px);
+  }
+}
+
+/* 375px — mobile */
+@media (max-width: 375px) {
+  :root {
+    --section-padding-x: 16px;
+  }
+}

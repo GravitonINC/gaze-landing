@@ -1,0 +1,138 @@
+.bondingCurve {
+  background: var(--gaze-obsidian-surface);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* ── Left: metric cards ─────────────────────────────────────── */
+.metricsCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.metricCard {
+  background: var(--gaze-obsidian-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.metricTitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gaze-white-muted);
+}
+
+.metricValue {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--gaze-amber);
+  line-height: 1;
+}
+
+.metricDescription {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gaze-white-dim);
+  line-height: 1.5;
+}
+
+/* ── Right: text ────────────────────────────────────────────── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gaze-amber);
+}
+
+.headline {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--gaze-white);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--gaze-white-dim);
+}
+
+/* ── Staking subsection ─────────────────────────────────────── */
+.stakingSection {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--gaze-obsidian-border);
+  padding-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stakingHeading {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gaze-white);
+  letter-spacing: -0.01em;
+}
+
+.stakingList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.stakingItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 15px;
+  color: var(--gaze-white-dim);
+  line-height: 1.5;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gaze-amber-glow);
+  border: 1px solid rgba(255, 191, 0, 0.25);
+  color: var(--gaze-amber);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}

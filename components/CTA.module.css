@@ -1,0 +1,116 @@
+.cta {
+  position: relative;
+  background: var(--gaze-obsidian-deep);
+  overflow: hidden;
+}
+
+/* Amber radial glow */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 191, 0, 0.12) 0%,
+    rgba(255, 191, 0, 0.04) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+}
+
+/* Burning eye icon */
+.eyeWrapper {
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-2);
+}
+
+.eyeIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.headline {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  color: var(--gaze-white);
+  letter-spacing: -0.03em;
+  max-width: 640px;
+  line-height: 1.1;
+}
+
+.subtext {
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.65;
+  color: var(--gaze-white-dim);
+  max-width: 480px;
+}
+
+/* Action buttons row */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.btnPrimary {
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.btnSecondary {
+  font-size: 16px;
+  padding: 16px 28px;
+}
+
+.btnGhost {
+  font-size: 15px;
+  color: var(--gaze-white-dim);
+}
+
+.btnGhost:hover {
+  color: var(--gaze-amber);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--gaze-white-muted);
+  margin-top: var(--space-2);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnSecondary,
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .eyeWrapper {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,89 @@
+.howItWorks {
+  background: var(--gaze-obsidian-surface);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gaze-amber);
+  margin-bottom: var(--space-4);
+}
+
+.headline {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--gaze-white);
+  margin-bottom: var(--space-12);
+  max-width: 560px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.card {
+  background: var(--gaze-obsidian-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-2);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--gaze-white);
+  letter-spacing: -0.02em;
+}
+
+.cardBody {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gaze-white-dim);
+  flex: 1;
+}
+
+.cardDetail {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gaze-amber);
+  background: var(--gaze-amber-glow);
+  border: 1px solid rgba(255, 191, 0, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  margin-top: var(--space-2);
+  align-self: flex-start;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid {
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .headline {
+    margin-bottom: var(--space-8);
+  }
+}
