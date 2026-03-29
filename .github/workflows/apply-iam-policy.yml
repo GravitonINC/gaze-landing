@@ -11,7 +11,7 @@ jobs:
   apply:
     name: Apply GithubActionsS3Deploy policy
     runs-on: ubuntu-latest
-    environment: admin
+    environment: infra-admin
 
     steps:
       - name: Checkout
@@ -20,8 +20,22 @@ jobs:
       - name: Configure AWS credentials (admin)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ADMIN_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_INFRA_ADMIN_ROLE_ARN }}
           aws-region: us-east-1
+
+      - name: Validate assumed role has IAM permissions
+        run: |
+          CALLER=$(aws sts get-caller-identity --output json)
+          ASSUMED_ROLE=$(echo "$CALLER" | jq -r '.Arn')
+          echo "Assumed role: $ASSUMED_ROLE"
+
+          if echo "$ASSUMED_ROLE" | grep -q "gaze-landing-github-deploy"; then
+            echo "ERROR: Running as the deploy role, not an admin role."
+            echo "The AWS_INFRA_ADMIN_ROLE_ARN secret in the 'infra-admin' environment"
+            echo "must be set to a role with iam:CreatePolicy / iam:PutUserPolicy permissions."
+            echo "See infra/README.md for setup instructions."
+            exit 1
+          fi
 
       - name: Apply IAM policy to github-actions-user
         env:
