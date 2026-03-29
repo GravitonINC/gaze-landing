@@ -2,6 +2,11 @@ name: Apply IAM Policy (one-time setup)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/iam-policy-github-actions.json'
+      - 'infra/apply-iam-policy.sh'
 
 jobs:
   apply:
