@@ -15,6 +15,21 @@ POLICY_ARN="arn:aws:iam::${ACCOUNT_ID}:policy/${POLICY_NAME}"
 
 echo "Account: ${ACCOUNT_ID}"
 
+# Resolve CloudFront distribution ARN; fall back to wildcard if ID is not provided.
+if [[ -n "${CLOUDFRONT_DISTRIBUTION_ID:-}" ]]; then
+  CLOUDFRONT_ARN="arn:aws:cloudfront::${ACCOUNT_ID}:distribution/${CLOUDFRONT_DISTRIBUTION_ID}"
+  echo "Scoping CloudFront permission to: ${CLOUDFRONT_ARN}"
+else
+  CLOUDFRONT_ARN="*"
+  echo "Warning: CLOUDFRONT_DISTRIBUTION_ID not set — falling back to wildcard CloudFront resource."
+fi
+
+# Build a temp policy file with the resolved ARN substituted in.
+RENDERED_POLICY_FILE="$(mktemp)"
+trap 'rm -f "${RENDERED_POLICY_FILE}"' EXIT
+sed "s|__CLOUDFRONT_DISTRIBUTION_ARN__|${CLOUDFRONT_ARN}|g" "${POLICY_FILE}" > "${RENDERED_POLICY_FILE}"
+POLICY_FILE="${RENDERED_POLICY_FILE}"
+
 # Create or update the managed policy
 if aws iam get-policy --policy-arn "${POLICY_ARN}" &>/dev/null; then
   echo "Policy ${POLICY_NAME} already exists — creating new version..."
