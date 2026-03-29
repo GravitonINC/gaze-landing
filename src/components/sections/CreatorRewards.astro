@@ -1,0 +1,140 @@
+---
+// CreatorRewards — Creator rewards leaderboard explanation
+const FEATURES = [
+  'Bonding curve pricing — fair for early supporters',
+  'Monthly USDC rewards from protocol treasury',
+  'On-chain transparency — every payout is auditable',
+  'No platform fees — Gaze takes 0% of creator rewards',
+];
+---
+
+<section
+  id="creator-rewards"
+  class="py-[var(--spacing-section-lg)] bg-gaze-bg-base"
+  aria-labelledby="creator-rewards-heading"
+>
+  <div class="section-container">
+    <div class="layout">
+
+      <!-- Left: text content -->
+      <div class="flex flex-col gap-6">
+        <p class="text-label-md uppercase tracking-widest text-gaze-ember animate-on-scroll">
+          For Creators
+        </p>
+        <h2
+          id="creator-rewards-heading"
+          class="text-display-md font-medium text-gaze-fg-primary animate-on-scroll"
+          style="animation-delay: 100ms"
+        >
+          Your audience rewards you.
+        </h2>
+        <p class="text-body-lg text-gaze-fg-secondary max-w-prose animate-on-scroll" style="animation-delay: 150ms">
+          Launch your creator token in minutes. Your audience buys and stakes it.
+          Every second they watch while staked, they earn — and so do you. Rewards
+          flow monthly, on-chain, without intermediaries.
+        </p>
+        <ul class="flex flex-col gap-4 mt-2 animate-on-scroll" role="list" style="animation-delay: 200ms">
+          {FEATURES.map((feature) => (
+            <li class="flex items-start gap-3 text-body-md text-gaze-fg-secondary">
+              <!-- Check icon -->
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                class="shrink-0 mt-0.5"
+              >
+                <circle cx="12" cy="12" r="10" fill="rgba(255,191,0,0.12)" stroke="rgba(255,191,0,0.3)" stroke-width="1" />
+                <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#FFBF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Right: token stats card -->
+      <div class="flex justify-center items-center animate-on-scroll" style="animation-delay: 250ms">
+        <div class="stats-card">
+          <div class="flex items-center justify-between">
+            <span class="text-label-sm uppercase tracking-widest text-gaze-fg-muted">Creator Token</span>
+            <span class="live-badge">LIVE</span>
+          </div>
+          <div class="token-name">CREATOR</div>
+          <div class="flex flex-col gap-3 border-t border-gaze-border pt-5">
+            <div class="flex items-center justify-between">
+              <span class="text-body-sm text-gaze-fg-muted">Price</span>
+              <span class="font-mono text-body-sm font-semibold text-gaze-fg-primary">$0.042</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-body-sm text-gaze-fg-muted">Holders</span>
+              <span class="font-mono text-body-sm font-semibold text-gaze-fg-primary">1,247</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-body-sm text-gaze-fg-muted">Monthly Rewards</span>
+              <span class="font-mono text-body-sm font-semibold text-gaze-fg-primary">~$890 USDC</span>
+            </div>
+          </div>
+          <div class="text-center text-body-xs text-gaze-fg-subtle border-t border-gaze-border pt-4">
+            Powered by Gaze Protocol
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .stats-card {
+    width: 100%;
+    max-width: 340px;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: var(--shadow-card), var(--shadow-ember);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .token-name {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-ember);
+    line-height: 1;
+  }
+
+  .live-badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--color-ember);
+    background: rgba(232, 98, 42, 0.12);
+    border: 1px solid rgba(232, 98, 42, 0.25);
+    border-radius: var(--radius-pill);
+    padding: 3px 8px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .stats-card {
+      max-width: 100%;
+    }
+  }
+</style>
