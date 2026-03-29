@@ -17,7 +17,11 @@ echo "Account: ${ACCOUNT_ID}"
 
 # Create or update the managed policy
 if aws iam get-policy --policy-arn "${POLICY_ARN}" &>/dev/null; then
-  echo "Policy ${POLICY_NAME} already exists — creating new version..."
+  echo "Policy ${POLICY_NAME} already exists — deleting non-default versions..."
+  aws iam list-policy-versions --policy-arn "${POLICY_ARN}" \
+    --query 'Versions[?IsDefaultVersion==`false`].VersionId' --output text | \
+    xargs -r -n1 aws iam delete-policy-version --policy-arn "${POLICY_ARN}" --version-id
+  echo "Creating new policy version..."
   aws iam create-policy-version \
     --policy-arn "${POLICY_ARN}" \
     --policy-document "file://${POLICY_FILE}" \
