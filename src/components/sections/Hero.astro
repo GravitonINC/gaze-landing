@@ -1,26 +1,77 @@
 ---
 // Hero — Section 1
-// Copy and design spec will be delivered by Ember and Designer
 ---
 
 <section
   id="hero"
-  class="relative min-h-dvh flex items-center pt-20"
+  class="relative min-h-dvh flex items-center pt-20 overflow-hidden"
   aria-label="Hero"
 >
   <div class="section-container">
-    <!-- Placeholder: copy from Ember, design from Designer -->
-    <div class="max-w-prose">
-      <p class="text-label-md uppercase tracking-widest text-gaze-ember mb-6 animate-on-scroll">
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+
+      <!-- BurningEye SVG motif -->
+      <div class="eye-wrapper mb-8 animate-on-scroll" aria-hidden="true">
+        <svg
+          class="burning-eye"
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+        >
+          <!-- Outer glow rings -->
+          <circle cx="100" cy="100" r="90" stroke="rgba(255,191,0,0.08)" stroke-width="1" class="glow-ring-outer" />
+          <circle cx="100" cy="100" r="72" stroke="rgba(255,191,0,0.12)" stroke-width="1" class="glow-ring-mid" />
+
+          <!-- Eye shape — almond -->
+          <path
+            d="M10 100 C40 50, 160 50, 190 100 C160 150, 40 150, 10 100Z"
+            fill="#1a1a1a"
+            stroke="rgba(255,191,0,0.4)"
+            stroke-width="1.5"
+          />
+
+          <!-- Iris -->
+          <circle cx="100" cy="100" r="38" fill="url(#irisGradient)" class="iris" />
+
+          <!-- Pupil -->
+          <circle cx="100" cy="100" r="18" fill="#0a0a0a" />
+
+          <!-- Pupil inner light -->
+          <circle cx="108" cy="92" r="5" fill="rgba(255,191,0,0.6)" />
+
+          <!-- Amber flame rays -->
+          <g class="rays" opacity="0.5">
+            <line x1="100" y1="20" x2="100" y2="40" stroke="#FFBF00" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="100" y1="160" x2="100" y2="180" stroke="#FFBF00" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="20" y1="100" x2="40" y2="100" stroke="#FFBF00" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="160" y1="100" x2="180" y2="100" stroke="#FFBF00" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="36" y1="36" x2="50" y2="50" stroke="#FFBF00" stroke-width="1" stroke-linecap="round" />
+            <line x1="150" y1="150" x2="164" y2="164" stroke="#FFBF00" stroke-width="1" stroke-linecap="round" />
+            <line x1="164" y1="36" x2="150" y2="50" stroke="#FFBF00" stroke-width="1" stroke-linecap="round" />
+            <line x1="50" y1="150" x2="36" y2="164" stroke="#FFBF00" stroke-width="1" stroke-linecap="round" />
+          </g>
+
+          <defs>
+            <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFBF00" stop-opacity="0.9" />
+              <stop offset="60%" stop-color="#CC9900" stop-opacity="0.7" />
+              <stop offset="100%" stop-color="#664400" stop-opacity="0.5" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <p class="text-label-md uppercase tracking-widest text-gaze-ember mb-6 animate-on-scroll" style="animation-delay: 50ms">
         Attention Protocol on Solana
       </p>
       <h1 class="text-display-xl font-medium text-gaze-fg-primary mb-8 animate-on-scroll" style="animation-delay: 100ms">
-        Your attention is already valuable.
+        Your attention is <span class="text-gaze-ember">already valuable.</span>
       </h1>
       <p class="text-body-xl text-gaze-fg-secondary mb-12 animate-on-scroll" style="animation-delay: 200ms">
         Watch creators you love. Earn from the attention you already give.
       </p>
-      <div class="flex flex-wrap gap-4 animate-on-scroll" style="animation-delay: 300ms">
+      <div class="flex flex-wrap gap-4 justify-center animate-on-scroll" style="animation-delay: 300ms">
         <a
           href="#"
           class="
@@ -33,7 +84,6 @@
             hover:bg-gaze-ember-dim
           "
         >
-          {/* TODO: Update href to real Chrome Web Store URL when extension is published */}
           Install Extension
         </a>
         <a
@@ -56,13 +106,71 @@
   </div>
 
   <!-- Ambient ember glow -->
-  <div
-    class="absolute inset-0 pointer-events-none"
-    aria-hidden="true"
-  >
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div
       class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 animate-ember-pulse"
       style="background: radial-gradient(circle, var(--color-ember) 0%, transparent 70%)"
     ></div>
   </div>
 </section>
+
+<style>
+  .eye-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .burning-eye {
+    width: 100%;
+    height: 100%;
+  }
+
+  .iris {
+    animation: irisPulse 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .glow-ring-outer {
+    animation: ringPulse 6s ease-in-out infinite;
+  }
+
+  .glow-ring-mid {
+    animation: ringPulse 6s ease-in-out infinite 1s;
+  }
+
+  .rays {
+    animation: raysRotate 20s linear infinite;
+    transform-origin: 100px 100px;
+  }
+
+  @keyframes irisPulse {
+    0%, 100% { opacity: 0.85; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+  }
+
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes raysRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 768px) {
+    .eye-wrapper {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .iris,
+    .glow-ring-outer,
+    .glow-ring-mid,
+    .rays {
+      animation: none;
+    }
+  }
+</style>

@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
+import StatsBar from '../components/sections/StatsBar.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
 import ForCreators from '../components/sections/ForCreators.astro';
+import CreatorRewards from '../components/sections/CreatorRewards.astro';
 import ForWatchers from '../components/sections/ForWatchers.astro';
+import BondingCurve from '../components/sections/BondingCurve.astro';
 import Platforms from '../components/sections/Platforms.astro';
 import TheProtocol from '../components/sections/TheProtocol.astro';
+import CTA from '../components/sections/CTA.astro';
 import Footer from '../components/sections/Footer.astro';
 import Nav from '../components/Nav.astro';
 ---
@@ -14,11 +18,15 @@ import Nav from '../components/Nav.astro';
   <Nav />
   <main>
     <Hero />
+    <StatsBar />
     <HowItWorks />
     <ForCreators />
+    <CreatorRewards />
     <ForWatchers />
+    <BondingCurve />
     <Platforms />
     <TheProtocol />
+    <CTA />
   </main>
   <Footer />
 </BaseLayout>

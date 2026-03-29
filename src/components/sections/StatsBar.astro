@@ -1,0 +1,86 @@
+---
+// StatsBar — Key protocol metrics
+const STATS = [
+  { label: 'TVL', value: '$—', description: 'Total value staked' },
+  { label: 'Active Watchers', value: '—', description: 'Unique viewers this month' },
+  { label: 'Creator Tokens', value: '—', description: 'Bonding curves deployed' },
+  { label: '24h Volume', value: '$—', description: 'Buy + sell transactions' },
+];
+---
+
+<section
+  class="bg-gaze-bg-surface border-t border-b border-gaze-border py-10"
+  aria-label="Protocol statistics"
+>
+  <div class="section-container">
+    <div class="stats-grid">
+      {STATS.map((stat) => (
+        <div class="stat animate-on-scroll">
+          <span class="stat-value">{stat.value}</span>
+          <span class="stat-label">{stat.label}</span>
+          <span class="text-body-xs text-gaze-fg-muted">{stat.description}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .stat + .stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: var(--color-border);
+  }
+
+  .stat-value {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-ember);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--color-fg-primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat + .stat::before {
+      display: none;
+    }
+
+    .stat {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+    }
+  }
+</style>

@@ -1,0 +1,132 @@
+---
+// BondingCurve — Visual explanation of bonding curve mechanics
+const METRICS = [
+  {
+    title: 'Starting Price',
+    value: '$0.001',
+    description: 'Every token launches at the same price',
+  },
+  {
+    title: 'Stake Multiplier',
+    value: '9×',
+    description: 'Watch while staked — maximum leaderboard impact',
+  },
+];
+
+const HOW_STAKING_WORKS = [
+  'Buy a creator token on the open market',
+  'Stake it to lock in your position',
+  'Watch the creator while staked',
+  'Earn rewards every second you watch',
+  'Unstake anytime — no lock-up period',
+];
+---
+
+<section
+  id="bonding-curve"
+  class="py-[var(--spacing-section-lg)] bg-gaze-bg-surface"
+  aria-labelledby="bonding-curve-heading"
+>
+  <div class="section-container">
+    <div class="layout">
+
+      <!-- Left: metric cards -->
+      <div class="flex flex-col gap-6 animate-on-scroll">
+        {METRICS.map((metric) => (
+          <div class="metric-card">
+            <span class="text-label-sm uppercase tracking-widest text-gaze-fg-muted">{metric.title}</span>
+            <span class="metric-value">{metric.value}</span>
+            <span class="text-body-sm text-gaze-fg-secondary">{metric.description}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right: explanation text -->
+      <div class="flex flex-col gap-6">
+        <p class="text-label-md uppercase tracking-widest text-gaze-ember animate-on-scroll">
+          The Mechanics
+        </p>
+        <h2
+          id="bonding-curve-heading"
+          class="text-display-md font-medium text-gaze-fg-primary animate-on-scroll"
+          style="animation-delay: 100ms"
+        >
+          A market for attention.
+        </h2>
+        <p class="text-body-lg text-gaze-fg-secondary animate-on-scroll" style="animation-delay: 150ms">
+          Every creator token follows the same bonding curve. Price rises automatically
+          as more tokens are bought. There's no pre-sale, no insider allocation — just the market.
+        </p>
+
+        <div class="staking-section animate-on-scroll" style="animation-delay: 200ms">
+          <h3 class="text-body-lg font-semibold text-gaze-fg-primary">How staking works:</h3>
+          <ol class="flex flex-col gap-3 mt-4" role="list">
+            {HOW_STAKING_WORKS.map((step, index) => (
+              <li class="flex items-start gap-3 text-body-md text-gaze-fg-secondary">
+                <span class="step-number">{index + 1}</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .metric-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .metric-value {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-ember);
+    line-height: 1;
+  }
+
+  .staking-section {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(232, 98, 42, 0.12);
+    border: 1px solid rgba(232, 98, 42, 0.25);
+    color: var(--color-ember);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>
