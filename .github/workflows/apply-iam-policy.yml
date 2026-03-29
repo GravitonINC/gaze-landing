@@ -1,12 +1,7 @@
-name: Apply IAM Policy (one-time setup)
+name: Apply IAM Policy (admin only)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'infra/iam-policy-github-actions.json'
-      - 'infra/apply-iam-policy.sh'
 
 permissions:
   id-token: write
@@ -16,6 +11,7 @@ jobs:
   apply:
     name: Apply GithubActionsS3Deploy policy
     runs-on: ubuntu-latest
+    environment: admin
 
     steps:
       - name: Checkout
@@ -24,7 +20,7 @@ jobs:
       - name: Configure AWS credentials (admin)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_ADMIN_ROLE_ARN }}
           aws-region: us-east-1
 
       - name: Apply IAM policy to github-actions-user
