@@ -8,6 +8,10 @@ on:
       - 'infra/iam-policy-github-actions.json'
       - 'infra/apply-iam-policy.sh'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   apply:
     name: Apply GithubActionsS3Deploy policy
@@ -20,8 +24,7 @@ jobs:
       - name: Configure AWS credentials (admin)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ADMIN_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
 
       - name: Apply IAM policy to github-actions-user
