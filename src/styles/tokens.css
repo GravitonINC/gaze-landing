@@ -6,7 +6,7 @@
 
 :root {
   /* ─── Color: Backgrounds ─────────────────────────────────────────── */
-  --color-bg-base:     #0a0a0b;   /* Near-black canvas */
+  --color-bg-base:     #080604;   /* Near-black canvas — Obsidian */
   --color-bg-surface:  #111113;   /* Card / panel surface */
   --color-bg-elevated: #18181c;   /* Elevated surface (modals, dropdowns) */
   --color-bg-overlay:  #1e1e24;   /* Overlay / hover state */
@@ -17,10 +17,16 @@
   --color-fg-muted:     #8a8680;  /* Muted / supporting text */
   --color-fg-subtle:    #4a4845;  /* Subtle / disabled text */
 
-  /* ─── Color: Brand (Ember) ───────────────────────────────────────── */
-  --color-ember:      #e8622a;    /* Primary ember orange */
-  --color-ember-dim:  #a84420;    /* Dimmed ember (hover states) */
-  --color-ember-glow: rgba(232, 98, 42, 0.15); /* Glow / ambient */
+  /* ─── Color: Brand (Full Palette) ───────────────────────────────── */
+  --color-blaze:    #FF6B2C;   /* Primary brand orange (Blaze) */
+  --color-molten:   #FFB800;   /* Brand gold */
+  --color-pulse:    #FF3366;   /* Brand pink */
+  --color-obsidian: #080604;   /* Brand black */
+
+  /* ─── Color: Brand (Ember — alias for Blaze) ─────────────────────── */
+  --color-ember:      #FF6B2C;    /* Primary ember orange */
+  --color-ember-dim:  #cc5522;    /* Dimmed ember (hover states) */
+  --color-ember-glow: rgba(255, 107, 44, 0.15); /* Glow / ambient */
 
   /* ─── Color: Borders ─────────────────────────────────────────────── */
   --color-border:        rgba(255, 255, 255, 0.08);
@@ -37,7 +43,7 @@
   --radius-pill: 9999px;
 
   /* ─── Shadows ────────────────────────────────────────────────────── */
-  --shadow-ember:      0 0 40px rgba(232, 98, 42, 0.2), 0 0 80px rgba(232, 98, 42, 0.08);
+  --shadow-ember:      0 0 40px rgba(255, 107, 44, 0.2), 0 0 80px rgba(255, 107, 44, 0.08);
   --shadow-card:       0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
   --shadow-card-hover: 0 2px 8px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
 
