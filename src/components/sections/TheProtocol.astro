@@ -6,13 +6,6 @@ const stats = [
   { label: 'Platforms', value: '9', description: 'Supported streaming platforms' },
   { label: 'Multiplier', value: '9×', description: 'Leaderboard weight for stakers who watch' },
 ] as const;
-
-const programs = [
-  { name: 'Tokens',   address: 'XEENqbVXt8y94cH7WMwYyQSuDgkvzZTzEzpsWLZu7Jf' },
-  { name: 'Voter',    address: 'XNGVXFcvqTM7ET3kwztFskFBmygQFXQVRQVBKp5Frvm' },
-  { name: 'Lend',     address: 'LENDcjsxpmVPrAG9nYp6hbQDVcsFjsaaPcRQow5W8te' },
-  { name: 'Payments', address: 'BkWxgtCSpwBwrL7aBmAtM5i76ZmZLS3otc3D4ShLbJV9' },
-] as const;
 ---
 
 <section
@@ -54,29 +47,6 @@ const programs = [
           <p class="text-body-sm text-gaze-fg-muted">{description}</p>
         </div>
       ))}
-    </div>
-
-    <!-- Program addresses -->
-    <div
-      class="
-        p-8
-        rounded-[var(--radius-card)]
-        bg-gaze-bg-surface
-        border border-gaze-border
-        animate-on-scroll
-      "
-    >
-      <p class="text-label-md uppercase tracking-widest text-gaze-fg-muted mb-6">
-        On-Chain Programs
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {programs.map(({ name, address }) => (
-          <div class="flex flex-col gap-1">
-            <p class="text-label-sm uppercase tracking-widest text-gaze-fg-muted">{name}</p>
-            <p class="font-mono text-body-sm text-gaze-fg-secondary break-all">{address}</p>
-          </div>
-        ))}
-      </div>
     </div>
   </div>
 </section>
