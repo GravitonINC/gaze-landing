@@ -1,0 +1,589 @@
+---
+// Teaser — hibernation-period landing for gazeprotocol.com.
+// Polished Variant E ("Burnt Ground"): tilted 38/62 split, static heat-line,
+// cursor-driven warm glow on the dark half, eye parallax, seam pill.
+//
+// Brand atoms come from src/styles/tokens.css (Ember Gallery palette).
+// Local Teaser-only tokens (--warm-white, --ink, --ink-soft) defined in :scope.
+---
+
+<section id="teaser" aria-label="Gaze">
+  <!-- DARK HALF -->
+  <div class="half half--left" aria-hidden="true">
+    <div class="ambient"></div>
+    <div class="cursor-heat"></div>
+
+    <div class="eye">
+      <svg viewBox="-30 -30 340 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gaze burning eye">
+        <defs>
+          <linearGradient id="teaser-eg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF6B2C"/>
+            <stop offset="50%" stop-color="#FFB800"/>
+            <stop offset="100%" stop-color="#FF3366"/>
+          </linearGradient>
+          <radialGradient id="teaser-ig">
+            <stop offset="0%" stop-color="#FFB800" stop-opacity="0.5"/>
+            <stop offset="50%" stop-color="#FF6B2C" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#FF6B2C" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="teaser-cg">
+            <stop offset="0%" stop-color="#FFB800" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#FF6B2C" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="teaser-sg"><feGaussianBlur stdDeviation="2.6"/></filter>
+          <filter id="teaser-hg"><feGaussianBlur stdDeviation="7"/></filter>
+        </defs>
+        <g class="glow-grp">
+          <circle cx="140" cy="140" r="100" fill="url(#teaser-ig)" />
+        </g>
+        <path d="M40 140 Q140 55 240 140" fill="none" stroke="url(#teaser-eg)" stroke-width="3.4" stroke-linecap="round" filter="url(#teaser-sg)"/>
+        <path d="M40 140 Q140 225 240 140" fill="none" stroke="url(#teaser-eg)" stroke-width="3.4" stroke-linecap="round" filter="url(#teaser-sg)"/>
+        <path d="M60 140 Q140 78 220 140" fill="none" stroke="#FF6B2C" stroke-width="1.2" opacity="0.32"/>
+        <path d="M60 140 Q140 202 220 140" fill="none" stroke="#FF6B2C" stroke-width="1.2" opacity="0.32"/>
+        <g class="iris-grp">
+          <circle cx="140" cy="140" r="32" fill="none" stroke="url(#teaser-eg)" stroke-width="2.1" opacity="0.85"/>
+          <circle cx="140" cy="140" r="24" fill="none" stroke="#FFB800" stroke-width="0.7" opacity="0.4"/>
+          <circle cx="140" cy="140" r="22" fill="url(#teaser-cg)" filter="url(#teaser-hg)"/>
+          <circle cx="140" cy="140" r="11" fill="#FFB800"/>
+          <circle cx="131" cy="130" r="3.5" fill="#fff" opacity="0.7"/>
+          <circle cx="150" cy="138" r="1.8" fill="#fff" opacity="0.4"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- WARM HALF -->
+  <div class="half half--right" aria-hidden="true">
+    <div class="wordmark-stage">
+      <span class="wordmark">GAZ<span class="accent">E</span></span>
+    </div>
+    <div class="embers">
+      <span style="left: 12%; animation-delay: -2s;"></span>
+      <span style="left: 28%; animation-delay: -7s;"></span>
+      <span style="left: 44%; animation-delay: -12s;"></span>
+      <span style="left: 60%; animation-delay: -3s;"></span>
+      <span style="left: 76%; animation-delay: -9s;"></span>
+      <span style="left: 90%; animation-delay: -14s;"></span>
+    </div>
+  </div>
+
+  <!-- HEAT LINE + PILL (above both halves) -->
+  <div class="heat-halo" aria-hidden="true"></div>
+  <div class="heat-line" aria-hidden="true"></div>
+  <div class="seam-pill"><span class="dot" aria-hidden="true"></span>every second still counts</div>
+
+  <!-- TAGLINE OVERLAY -->
+  <div class="tagline">
+    <h1>your attention, <em>rewarded.</em></h1>
+  </div>
+
+  <!-- CORNERS -->
+  <div class="corner tl">
+    <div class="wm">GAZE</div>
+    <div class="sub">protocol &nbsp;·&nbsp; solana</div>
+  </div>
+  <div class="corner tr">
+    SEE WHAT<br/>ATTENTION<br/>IS WORTH
+  </div>
+  <div class="corner bl">
+    <span class="dot-static">●</span> &nbsp; awake &nbsp; · &nbsp; quiet &nbsp; · &nbsp; watching
+  </div>
+  <div class="corner br">
+    18.4°N &nbsp; 66.0°W
+  </div>
+
+  <!-- BOTTOM RAIL -->
+  <div class="rail">
+    <div class="subline">unhurried <span>·</span> continuous <span>·</span> on-chain</div>
+    <div class="social-chips">
+      <a class="social-chip" href="https://x.com/Gaze__Protocol" target="_blank" rel="noopener" aria-label="Gaze on X">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.7 7.2 14.6 1.5h-1.2L9.2 6.4 5.8 1.5H1.7l5.2 7.5-5.2 6h1.2L7.4 9.7l4 5.3h4ZM7.9 9 7.3 8.2 3.3 2.4h1.8L8.4 7l.6.8 4.2 6h-1.8Z"/></svg>
+        <span>X</span>
+      </a>
+      <a class="social-chip" href="https://t.me/gazeprotocol" target="_blank" rel="noopener" aria-label="Gaze on Telegram">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.7 2.5 12.5 13c-.2.7-.6.9-1.2.6L7.9 11l-1.6 1.6c-.2.2-.3.3-.6.3l.2-2.7L11 5.7c.2-.2 0-.3-.3-.1L4.6 9.5 2 8.7c-.7-.2-.7-.7.1-1L13.7 2c.6-.2 1.1.1.9 1.1Z"/></svg>
+        <span>Telegram</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  #teaser {
+    /* Local Teaser-only tokens — brand tokens come from tokens.css */
+    --warm-white: #f3efe6;
+    --ink: #181410;
+    --ink-soft: #3a342c;
+    /* Cursor-driven custom properties (defaulted to mid screen) */
+    --mx: 18%;
+    --my: 50%;
+    --px: 0.18;
+    --py: 0.5;
+
+    position: relative;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    background: var(--color-bg-base);
+    color: var(--color-fg-primary);
+  }
+
+  #teaser :focus-visible {
+    outline: 2px solid var(--color-blaze);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  /* ─── TILTED SPLIT (38/62 with seam tilted ~4deg) ────────────── */
+  #teaser .half {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  #teaser .half--left {
+    background: var(--color-bg-base);
+    clip-path: polygon(0 0, 42% 0, 38% 100%, 0 100%);
+  }
+  #teaser .half--right {
+    background: var(--warm-white);
+    clip-path: polygon(42% 0, 100% 0, 100% 100%, 38% 100%);
+  }
+  #teaser .half--right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 100% 60% at 80% 0%, rgba(255,107,44,0.06), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 90% 100%, rgba(255,184,0,0.05), transparent 60%);
+    pointer-events: none;
+  }
+  #teaser .half--right::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(8,6,4,0.025) 0 1px, transparent 1px 4px);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* Cursor-driven warm glow on the dark side */
+  #teaser .cursor-heat {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      320px 320px at var(--mx) var(--my),
+      rgba(255,107,44,0.18) 0%,
+      rgba(255,184,0,0.08) 30%,
+      transparent 65%
+    );
+    transition: background 80ms linear;
+  }
+
+  /* Ambient glow behind the eye */
+  #teaser .ambient {
+    position: absolute;
+    top: 50%; left: 18%;
+    transform: translate(-50%, -50%);
+    width: 70vmin; height: 70vmin;
+    background: radial-gradient(circle, rgba(255,107,44,0.22), transparent 65%);
+    filter: blur(20px);
+    animation: teaser-ambient-breathe 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes teaser-ambient-breathe {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+    50%      { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+  }
+
+  /* ─── BURNING EYE ───────────────────────────────────── */
+  #teaser .eye {
+    position: absolute;
+    top: 50%; left: 18%;
+    transform: translate(-50%, -50%);
+    width: 38vmin;
+    height: 38vmin;
+    filter: drop-shadow(0 0 80px rgba(255,107,44,0.5));
+    pointer-events: auto;
+    will-change: transform;
+    transition: transform 600ms var(--ease-gaze, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  #teaser .eye .iris-grp {
+    transform-origin: 140px 140px;
+    animation: teaser-iris-breathe 6s ease-in-out infinite;
+  }
+  #teaser .eye .glow-grp {
+    transform-origin: 140px 140px;
+    animation: teaser-glow-breathe 6s ease-in-out infinite;
+  }
+  @keyframes teaser-iris-breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
+  }
+  @keyframes teaser-glow-breathe {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+  }
+
+  /* ─── MASSIVE WORDMARK (right side) ───────────────────────── */
+  #teaser .wordmark-stage {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    left: 38%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  #teaser .wordmark {
+    font-family: var(--font-sans, 'Geist', system-ui, sans-serif);
+    font-weight: 100;
+    font-size: clamp(28vh, 38vw, 100vh);
+    letter-spacing: -0.02em;
+    line-height: 0.82;
+    color: var(--ink);
+    user-select: none;
+    transform: translate3d(
+      calc((var(--px, 0) - 0.5) * -12px),
+      calc((var(--py, 0) - 0.5) * -8px),
+      0
+    );
+    transition: transform 1200ms var(--ease-gaze, cubic-bezier(0.16, 1, 0.3, 1));
+    will-change: transform;
+  }
+  #teaser .wordmark .accent { position: relative; }
+  #teaser .wordmark .accent::after {
+    content: '';
+    position: absolute;
+    left: 8%; right: 8%; bottom: 14%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-blaze), var(--color-molten), var(--color-pulse));
+    opacity: 0.85;
+    filter: blur(2px);
+    animation: teaser-ink-pulse 5s ease-in-out infinite;
+  }
+  @keyframes teaser-ink-pulse {
+    0%, 100% { opacity: 0.55; transform: scaleX(0.92); }
+    50%      { opacity: 1; transform: scaleX(1); }
+  }
+
+  /* ─── HEAT LINE ─────────────────────────────────────── */
+  #teaser .heat-line {
+    position: absolute;
+    left: -2%; right: -2%;
+    height: 1.5px;
+    top: 60%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,107,44,0.0) 8%,
+      var(--color-blaze) 22%,
+      var(--color-molten) 50%,
+      var(--color-pulse) 78%,
+      rgba(255,51,102,0.0) 92%,
+      transparent 100%
+    );
+    filter: drop-shadow(0 0 12px rgba(255,107,44,0.55));
+    z-index: 6;
+    animation: teaser-heat-pulse 6s ease-in-out infinite;
+  }
+  @keyframes teaser-heat-pulse {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(255,107,44,0.4)); opacity: 0.85; }
+    50%      { filter: drop-shadow(0 0 22px rgba(255,107,44,0.85)); opacity: 1; }
+  }
+  #teaser .heat-halo {
+    position: absolute;
+    left: -2%; right: -2%;
+    height: 80px;
+    top: calc(60% - 40px);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255,107,44,0.04) 45%,
+      rgba(255,107,44,0.08) 50%,
+      rgba(255,107,44,0.04) 55%,
+      transparent 100%
+    );
+    filter: blur(14px);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* ─── SEAM PILL ──────────────────────────────────────── */
+  #teaser .seam-pill {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    background: var(--color-bg-base);
+    border: 1px solid rgba(255,107,44,0.4);
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--color-molten);
+    white-space: nowrap;
+    box-shadow:
+      0 0 30px rgba(255,107,44,0.35),
+      inset 0 0 16px rgba(255,107,44,0.05);
+    animation: teaser-pill-glow 6s ease-in-out infinite;
+  }
+  @keyframes teaser-pill-glow {
+    0%, 100% { box-shadow: 0 0 18px rgba(255,107,44,0.25), inset 0 0 12px rgba(255,107,44,0.04); }
+    50%      { box-shadow: 0 0 38px rgba(255,107,44,0.55), inset 0 0 18px rgba(255,107,44,0.08); }
+  }
+  #teaser .seam-pill .dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--color-blaze);
+    margin-right: 12px;
+    vertical-align: middle;
+    box-shadow: 0 0 10px var(--color-blaze);
+    animation: teaser-dot-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes teaser-dot-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.4); }
+  }
+
+  /* ─── EMBERS ────────────────────────────────────────── */
+  #teaser .embers {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 38%; right: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 4;
+  }
+  #teaser .embers span {
+    position: absolute;
+    width: 3px; height: 3px;
+    background: var(--color-blaze);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 8px var(--color-blaze), 0 0 16px var(--color-molten);
+    animation: teaser-ember-rise 18s linear infinite;
+  }
+  @keyframes teaser-ember-rise {
+    0%   { transform: translate(0, 110vh) scale(0.6); opacity: 0; }
+    10%  { opacity: 0.85; }
+    85%  { opacity: 0.5; }
+    100% { transform: translate(40px, -10vh) scale(1); opacity: 0; }
+  }
+
+  /* ─── TAGLINE OVERLAY ─────────────────────────────────── */
+  #teaser .tagline {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 9;
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+  #teaser .tagline h1 {
+    font-family: var(--font-sans, 'Geist', system-ui, sans-serif);
+    font-weight: 100;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--color-fg-primary);
+    margin: 0;
+  }
+  #teaser .tagline h1 em {
+    font-style: normal;
+    color: var(--color-blaze);
+  }
+
+  /* ─── CORNER MARKS ────────────────────────────────────── */
+  #teaser .corner {
+    position: absolute;
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+  #teaser .corner.tl { top: 24px; left: 24px; color: var(--color-fg-secondary); }
+  #teaser .corner.tr { top: 24px; right: 24px; color: var(--ink-soft); text-align: right; }
+  #teaser .corner.bl { bottom: 24px; left: 24px; color: var(--color-fg-muted); }
+  #teaser .corner.br { bottom: 24px; right: 24px; color: var(--ink-soft); text-align: right; }
+  #teaser .corner.tl .sub { margin-top: 6px; color: var(--color-fg-muted); }
+  #teaser .corner.bl .dot-static { color: var(--color-blaze); }
+  #teaser .corner .wm {
+    font-family: var(--font-sans, 'Geist', system-ui, sans-serif);
+    font-weight: 100;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: var(--color-fg-primary);
+    display: flex; align-items: center; gap: 10px;
+  }
+  #teaser .corner .wm::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--color-blaze);
+    box-shadow: 0 0 10px var(--color-blaze);
+    animation: teaser-dot-pulse 2.4s ease-in-out infinite;
+  }
+
+  /* ─── BOTTOM RAIL ────────────────────────────────────── */
+  #teaser .rail {
+    position: absolute;
+    left: 0; right: 0; bottom: 28px;
+    display: flex; flex-direction: column; align-items: center; gap: 18px;
+    z-index: 11;
+    pointer-events: none;
+  }
+  #teaser .subline {
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  #teaser .subline span { color: var(--color-blaze); margin: 0 10px; opacity: 0.7; }
+
+  #teaser .social-chips { display: inline-flex; gap: 10px; pointer-events: auto; }
+  #teaser .social-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid rgba(8,6,4,0.18);
+    border-radius: 999px;
+    background: rgba(243,239,230,0.45);
+    color: var(--ink);
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 320ms var(--ease-gaze, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  #teaser .social-chip:hover {
+    border-color: var(--color-blaze);
+    color: var(--color-bg-base);
+    background: rgba(255,184,0,0.18);
+    box-shadow:
+      0 0 24px rgba(255,107,44,0.3),
+      inset 0 0 0 1px rgba(255,107,44,0.4);
+    transform: translateY(-2px);
+  }
+  #teaser .social-chip svg { width: 13px; height: 13px; opacity: 0.85; }
+
+  /* ─── MOBILE ────────────────────────────────────────── */
+  @media (max-width: 760px) {
+    #teaser .half--left  { clip-path: polygon(0 0, 100% 0, 100% 36%, 0 40%); }
+    #teaser .half--right { clip-path: polygon(0 36%, 100% 36%, 100% 100%, 0 100%); }
+
+    #teaser .ambient { left: 50%; top: 22%; }
+    #teaser .eye { left: 50%; top: 22%; width: 44vmin; height: 44vmin; }
+
+    #teaser .wordmark-stage { top: 38%; left: 0; right: 0; bottom: 0; }
+    #teaser .wordmark { font-size: 38vw; line-height: 1; }
+
+    #teaser .heat-line, #teaser .heat-halo {
+      top: 38%;
+    }
+    #teaser .seam-pill {
+      top: 38%; left: 50%;
+    }
+
+    #teaser .embers { left: 0; top: 38%; right: 0; }
+    #teaser .tagline { top: 4%; }
+    #teaser .tagline h1 { font-size: clamp(1.8rem, 9vw, 3rem); }
+    #teaser .corner.tr { color: var(--color-fg-secondary); }
+    #teaser .corner.br { color: var(--color-fg-secondary); }
+    #teaser .rail { bottom: 16px; }
+    #teaser .subline { color: var(--color-fg-muted); font-size: 10px; }
+    #teaser .social-chip {
+      background: rgba(8,6,4,0.55);
+      color: var(--color-fg-primary);
+      border-color: rgba(255,255,255,0.12);
+    }
+  }
+
+  /* ─── REDUCED MOTION ──────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    #teaser, #teaser *, #teaser *::before, #teaser *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  // ─── Cursor-driven heat & wordmark / eye parallax ───────────────────
+  (function () {
+    const teaser = document.getElementById('teaser');
+    if (!teaser) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    let pending = false;
+    let lastX = 0.18;
+    let lastY = 0.5;
+
+    function tick() {
+      pending = false;
+      teaser.style.setProperty('--mx', (lastX * 100).toFixed(2) + '%');
+      teaser.style.setProperty('--my', (lastY * 100).toFixed(2) + '%');
+      teaser.style.setProperty('--px', lastX.toFixed(3));
+      teaser.style.setProperty('--py', lastY.toFixed(3));
+
+      const eye = teaser.querySelector('.eye');
+      if (eye) {
+        const dx = (lastX - 0.18) * 24;
+        const dy = (lastY - 0.50) * 18;
+        (eye as HTMLElement).style.transform =
+          'translate(calc(-50% + ' + dx.toFixed(1) + 'px), calc(-50% + ' + dy.toFixed(1) + 'px))';
+      }
+    }
+
+    function onMove(e: MouseEvent | TouchEvent) {
+      const t = (e as TouchEvent).touches ? (e as TouchEvent).touches[0] : (e as MouseEvent);
+      if (!t) return;
+      lastX = Math.max(0, Math.min(1, t.clientX / window.innerWidth));
+      lastY = Math.max(0, Math.min(1, t.clientY / window.innerHeight));
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(tick);
+      }
+    }
+
+    window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('touchmove', onMove, { passive: true });
+
+    tick();
+  })();
+
+  // ─── Click anywhere to "wake" the heat line briefly ──────────────────
+  (function () {
+    const line = document.querySelector('#teaser .heat-line') as HTMLElement | null;
+    const halo = document.querySelector('#teaser .heat-halo') as HTMLElement | null;
+    if (!line) return;
+    document.addEventListener('click', function (e) {
+      const target = e.target as HTMLElement;
+      if (target && target.closest('a')) return;
+      line.style.transition = 'filter 200ms ease-out, opacity 200ms ease-out';
+      line.style.filter = 'drop-shadow(0 0 36px rgba(255,184,0,0.95))';
+      line.style.opacity = '1';
+      if (halo) {
+        halo.style.transition = 'opacity 200ms ease-out';
+        halo.style.opacity = '1.2';
+      }
+      setTimeout(function () {
+        line.style.filter = '';
+        line.style.opacity = '';
+        if (halo) halo.style.opacity = '';
+      }, 480);
+    });
+  })();
+</script>
