@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Gaze Protocol — Your attention is already valuable.',
-  description = 'Watch creators you love. Earn from the attention you already give. Gaze is an on-chain attention rewards protocol on Solana.',
+  title = 'Gaze — your attention, rewarded.',
+  description = 'A watch protocol on Solana. Every second still counts.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -20,27 +20,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#080604" />
 
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph -->
+    <!-- Open Graph — text-only, no banner image during teaser -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://gazeprotocol.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Twitter Card — summary (small) since there is no banner image -->
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://gazeprotocol.com/og-image.png" />
     <meta name="twitter:site" content="@Gaze__Protocol" />
     <meta name="twitter:creator" content="@Gaze__Protocol" />
 

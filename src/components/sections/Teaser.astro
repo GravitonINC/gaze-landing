@@ -98,11 +98,7 @@
     <div class="social-chips">
       <a class="social-chip" href="https://x.com/Gaze__Protocol" target="_blank" rel="noopener" aria-label="Gaze on X">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.7 7.2 14.6 1.5h-1.2L9.2 6.4 5.8 1.5H1.7l5.2 7.5-5.2 6h1.2L7.4 9.7l4 5.3h4ZM7.9 9 7.3 8.2 3.3 2.4h1.8L8.4 7l.6.8 4.2 6h-1.8Z"/></svg>
-        <span>X</span>
-      </a>
-      <a class="social-chip" href="https://t.me/gazeprotocol" target="_blank" rel="noopener" aria-label="Gaze on Telegram">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.7 2.5 12.5 13c-.2.7-.6.9-1.2.6L7.9 11l-1.6 1.6c-.2.2-.3.3-.6.3l.2-2.7L11 5.7c.2-.2 0-.3-.3-.1L4.6 9.5 2 8.7c-.7-.2-.7-.7.1-1L13.7 2c.6-.2 1.1.1.9 1.1Z"/></svg>
-        <span>Telegram</span>
+        <span>Follow on X</span>
       </a>
     </div>
   </div>
@@ -134,12 +130,8 @@
     border-radius: 4px;
   }
 
-  /* ─── TILTED SPLIT (38/62 with seam tilted ~4deg) ────────────── */
-  #teaser .half {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
+  /* TILTED SPLIT */
+  #teaser .half { position: absolute; inset: 0; pointer-events: none; }
   #teaser .half--left {
     background: var(--color-bg-base);
     clip-path: polygon(0 0, 42% 0, 38% 100%, 0 100%);
@@ -165,7 +157,6 @@
     pointer-events: none;
   }
 
-  /* Cursor-driven warm glow on the dark side */
   #teaser .cursor-heat {
     position: absolute;
     inset: 0;
@@ -179,7 +170,6 @@
     transition: background 80ms linear;
   }
 
-  /* Ambient glow behind the eye */
   #teaser .ambient {
     position: absolute;
     top: 50%; left: 18%;
@@ -195,13 +185,12 @@
     50%      { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
   }
 
-  /* ─── BURNING EYE ───────────────────────────────────── */
+  /* BURNING EYE */
   #teaser .eye {
     position: absolute;
     top: 50%; left: 18%;
     transform: translate(-50%, -50%);
-    width: 38vmin;
-    height: 38vmin;
+    width: 38vmin; height: 38vmin;
     filter: drop-shadow(0 0 80px rgba(255,107,44,0.5));
     pointer-events: auto;
     will-change: transform;
@@ -224,14 +213,12 @@
     50%      { opacity: 1; }
   }
 
-  /* ─── MASSIVE WORDMARK (right side) ───────────────────────── */
+  /* WORDMARK */
   #teaser .wordmark-stage {
     position: absolute;
     top: 0; right: 0; bottom: 0;
     left: 38%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     pointer-events: none;
   }
   #teaser .wordmark {
@@ -266,7 +253,7 @@
     50%      { opacity: 1; transform: scaleX(1); }
   }
 
-  /* ─── HEAT LINE ─────────────────────────────────────── */
+  /* HEAT LINE */
   #teaser .heat-line {
     position: absolute;
     left: -2%; right: -2%;
@@ -308,11 +295,10 @@
     pointer-events: none;
   }
 
-  /* ─── SEAM PILL ──────────────────────────────────────── */
+  /* SEAM PILL */
   #teaser .seam-pill {
     position: absolute;
-    top: 60%;
-    left: 40%;
+    top: 60%; left: 40%;
     transform: translate(-50%, -50%);
     z-index: 8;
     background: var(--color-bg-base);
@@ -348,7 +334,7 @@
     50%      { opacity: 1; transform: scale(1.4); }
   }
 
-  /* ─── EMBERS ────────────────────────────────────────── */
+  /* EMBERS */
   #teaser .embers {
     position: absolute;
     top: 0; bottom: 0;
@@ -373,11 +359,10 @@
     100% { transform: translate(40px, -10vh) scale(1); opacity: 0; }
   }
 
-  /* ─── TAGLINE OVERLAY ─────────────────────────────────── */
+  /* TAGLINE */
   #teaser .tagline {
     position: absolute;
-    top: 13%;
-    left: 50%;
+    top: 13%; left: 50%;
     transform: translateX(-50%);
     text-align: center;
     z-index: 9;
@@ -398,7 +383,7 @@
     color: var(--color-blaze);
   }
 
-  /* ─── CORNER MARKS ────────────────────────────────────── */
+  /* CORNERS */
   #teaser .corner {
     position: absolute;
     font-family: var(--font-mono, 'Geist Mono', monospace);
@@ -430,7 +415,7 @@
     animation: teaser-dot-pulse 2.4s ease-in-out infinite;
   }
 
-  /* ─── BOTTOM RAIL ────────────────────────────────────── */
+  /* BOTTOM RAIL */
   #teaser .rail {
     position: absolute;
     left: 0; right: 0; bottom: 28px;
@@ -449,17 +434,17 @@
 
   #teaser .social-chips { display: inline-flex; gap: 10px; pointer-events: auto; }
   #teaser .social-chip {
-    display: inline-flex; align-items: center; gap: 8px;
-    height: 40px;
-    padding: 0 16px;
+    display: inline-flex; align-items: center; gap: 10px;
+    height: 44px;
+    padding: 0 22px;
     border: 1px solid rgba(8,6,4,0.18);
     border-radius: 999px;
-    background: rgba(243,239,230,0.45);
+    background: rgba(243,239,230,0.55);
     color: var(--ink);
     font-family: var(--font-mono, 'Geist Mono', monospace);
     font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.18em;
+    font-weight: 500;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     text-decoration: none;
     backdrop-filter: blur(10px);
@@ -469,32 +454,24 @@
   #teaser .social-chip:hover {
     border-color: var(--color-blaze);
     color: var(--color-bg-base);
-    background: rgba(255,184,0,0.18);
+    background: rgba(255,184,0,0.22);
     box-shadow:
       0 0 24px rgba(255,107,44,0.3),
       inset 0 0 0 1px rgba(255,107,44,0.4);
     transform: translateY(-2px);
   }
-  #teaser .social-chip svg { width: 13px; height: 13px; opacity: 0.85; }
+  #teaser .social-chip svg { width: 14px; height: 14px; opacity: 0.9; }
 
-  /* ─── MOBILE ────────────────────────────────────────── */
+  /* MOBILE */
   @media (max-width: 760px) {
     #teaser .half--left  { clip-path: polygon(0 0, 100% 0, 100% 36%, 0 40%); }
     #teaser .half--right { clip-path: polygon(0 36%, 100% 36%, 100% 100%, 0 100%); }
-
     #teaser .ambient { left: 50%; top: 22%; }
     #teaser .eye { left: 50%; top: 22%; width: 44vmin; height: 44vmin; }
-
     #teaser .wordmark-stage { top: 38%; left: 0; right: 0; bottom: 0; }
     #teaser .wordmark { font-size: 38vw; line-height: 1; }
-
-    #teaser .heat-line, #teaser .heat-halo {
-      top: 38%;
-    }
-    #teaser .seam-pill {
-      top: 38%; left: 50%;
-    }
-
+    #teaser .heat-line, #teaser .heat-halo { top: 38%; }
+    #teaser .seam-pill { top: 38%; left: 50%; }
     #teaser .embers { left: 0; top: 38%; right: 0; }
     #teaser .tagline { top: 4%; }
     #teaser .tagline h1 { font-size: clamp(1.8rem, 9vw, 3rem); }
@@ -509,7 +486,6 @@
     }
   }
 
-  /* ─── REDUCED MOTION ──────────────────────────────────── */
   @media (prefers-reduced-motion: reduce) {
     #teaser, #teaser *, #teaser *::before, #teaser *::after {
       animation: none !important;
@@ -519,7 +495,6 @@
 </style>
 
 <script>
-  // ─── Cursor-driven heat & wordmark / eye parallax ───────────────────
   (function () {
     const teaser = document.getElementById('teaser');
     if (!teaser) return;
@@ -564,7 +539,6 @@
     tick();
   })();
 
-  // ─── Click anywhere to "wake" the heat line briefly ──────────────────
   (function () {
     const line = document.querySelector('#teaser .heat-line') as HTMLElement | null;
     const halo = document.querySelector('#teaser .heat-halo') as HTMLElement | null;
